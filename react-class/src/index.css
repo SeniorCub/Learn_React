@@ -9,5 +9,5 @@
      -webkit-text-stroke: 3px white;
 }
 .main::-webkit-scrollbar{
-     @apply none
+     display: none;
 }
