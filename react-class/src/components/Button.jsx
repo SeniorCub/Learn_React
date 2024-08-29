@@ -1,11 +1,12 @@
+/* eslint-disable react/prop-types */
 import './button.modules.css'
 
-const Button = ()=>{
+const Button = (props)=>{
 
      return (
-          <>
-               <button>Hello</button>
-          </>
+          <button className={`btn ${props.style}`} onClick={props.action}>
+               {props.name}
+          </button>
      )
 }
 

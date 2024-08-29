@@ -8,12 +8,21 @@ import netflix08 from '../assets/images/netflix08.webp'
 import netflix09 from '../assets/images/netflix09.webp'
 import netflix10 from '../assets/images/netflix10.webp'
 import netflix11 from '../assets/images/netflix11.webp'
+import EachMovie from './EachMovie'
 
 const Trending = () => {
-     const eachImg = {
-          objectFit: 'cover',
-          objectPosition: 'center',
-     }
+     const trendingMovies = [
+          {id:1, title: '1', image: netflix02},
+          {id:2, title: '2', image: netflix03},
+          {id:3, title: '3', image: netflix04},
+          {id:4, title: '4', image: netflix05},
+          {id:5, title: '5', image: netflix06},
+          {id:6, title: '6', image: netflix07},
+          {id:7, title: '7', image: netflix08},
+          {id:8, title: '8', image: netflix09},
+          {id:9, title: '9', image: netflix10},
+          {id:10, title: '10', image: netflix11},
+     ]
      return (
           <>
                <div className="bg-black text-white py-10">
@@ -36,46 +45,11 @@ const Trending = () => {
                          </div>
                          <div className='w-[85vw] mx-auto overflow-x-scroll main'>
                               <div className='w-max mx-auto px-10 py-2 flex gap-20'>
-                                   <div className='relative w-40'>
-                                        <img src={netflix02} alt="" style={eachImg}/>
-                                        <span className='absolute text-9xl bottom-0 font-extrabold -left-10 text-black number'>1</span>
-                                   </div>
-                                   <div className='relative w-40'>
-                                        <img src={netflix03} alt="" style={eachImg}/>
-                                        <span className='absolute text-9xl bottom-0 font-extrabold -left-10 text-black number'>2</span>
-                                   </div>
-                                   <div className='relative w-40'>
-                                        <img src={netflix04} alt="" style={eachImg}/>
-                                        <span className='absolute text-9xl bottom-0 font-extrabold -left-10 text-black number'>3</span>
-                                   </div>
-                                   <div className='relative w-40'>
-                                        <img src={netflix05} alt="" style={eachImg}/>
-                                        <span className='absolute text-9xl bottom-0 font-extrabold -left-10 text-black number'>4</span>
-                                   </div>
-                                   <div className='relative w-40'>
-                                        <img src={netflix06} alt="" style={eachImg}/>
-                                        <span className='absolute text-9xl bottom-0 font-extrabold -left-10 text-black number'>5</span>
-                                   </div>
-                                   <div className='relative w-40'>
-                                        <img src={netflix07} alt="" style={eachImg}/>
-                                        <span className='absolute text-9xl bottom-0 font-extrabold -left-10 text-black number'>6</span>
-                                   </div>
-                                   <div className='relative w-40'>
-                                        <img src={netflix08} alt="" style={eachImg}/>
-                                        <span className='absolute text-9xl bottom-0 font-extrabold -left-10 text-black number'>7</span>
-                                   </div>
-                                   <div className='relative w-40'>
-                                        <img src={netflix09} alt="" style={eachImg}/>
-                                        <span className='absolute text-9xl bottom-0 font-extrabold -left-10 text-black number'>8</span>
-                                   </div>
-                                   <div className='relative w-40'>
-                                        <img src={netflix10} alt="" style={eachImg}/>
-                                        <span className='absolute text-9xl bottom-0 font-extrabold -left-10 text-black number'>9</span>
-                                   </div>
-                                   <div className='relative w-40'>
-                                        <img src={netflix11} alt="" style={eachImg}/>
-                                        <span className='absolute text-9xl bottom-0 font-extrabold -left-10 text-black number'>10</span>
-                                   </div>
+                                   {
+                                        trendingMovies.map((movie, index) => (
+                                             <EachMovie key={index} num={movie.id} src={movie.image} />
+                                        ))
+                                   }
                               </div>
                          </div>
                     </div>
