@@ -43,8 +43,8 @@ const Trending = () => {
                                    <option value="documentary">Documentary</option>
                               </select>
                          </div>
-                         <div className='w-[85vw] mx-auto overflow-x-scroll main'>
-                              <div className='w-max mx-auto px-10 py-2 flex gap-20'>
+                         <div className='container overflow-x-scroll main'>
+                              <div className='w-max py-2 grid grid-cols-10 gap-20'>
                                    {
                                         trendingMovies.map((movie, index) => (
                                              <EachMovie key={index} num={movie.id} src={movie.image} />

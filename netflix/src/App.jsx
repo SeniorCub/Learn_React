@@ -1,7 +1,10 @@
 
 import './App.css'
+import Faqsection from './components/Faqsection'
+import Footer from './components/Footer'
 import HeroSection from './components/HeroSection'
 import Reason from './components/Reason'
+import Subscribe from './components/Subscribe'
 import Trending from './components/Trending'
 
 function App() {
@@ -10,6 +13,9 @@ function App() {
                <HeroSection/>
                <Trending/>
                <Reason/>
+               <Faqsection />
+               <Subscribe />
+               <Footer />
           </>
      )
 }

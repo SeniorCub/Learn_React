@@ -8,7 +8,7 @@ import netflix08 from '../assets/images/netflix08.webp'
 import netflix09 from '../assets/images/netflix09.webp'
 import netflix10 from '../assets/images/netflix10.webp'
 import netflix11 from '../assets/images/netflix11.webp'
-import EachMovie from './EachMovie'
+import EachMovie from './EachMovie'     
 
 const Trending = () => {
      const trendingMovies = [
