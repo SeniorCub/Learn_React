@@ -1,10 +1,10 @@
-import React from 'react'
 import { useState } from 'react'
 import './App.css'
 import Button from './components/Button'
 import HeroSection from './components/HeroSection'
 import Reason from './components/Reason'
 import Trending from './components/Trending'
+import Faqs from './components/Faqs'
 
 function App() {
      const [students, setStudents] = useState(['bami', 'favour', 'dhorn'])
@@ -32,6 +32,7 @@ function App() {
                          <Button key={index} action={()=>setStudents([...students,btnn.names])} name={btnn.names} style={btnn.styles}/>
                     ))
                }
+               <Faqs />
           </>
      )
 }
