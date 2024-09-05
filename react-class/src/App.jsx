@@ -5,6 +5,7 @@ import HeroSection from './components/HeroSection'
 import Reason from './components/Reason'
 import Trending from './components/Trending'
 import Faqs from './components/Faqs'
+import Apiclass from './components/Apiclass'
 
 function App() {
      const [students, setStudents] = useState(['bami', 'favour', 'dhorn'])
@@ -33,6 +34,7 @@ function App() {
                     ))
                }
                <Faqs />
+               <Apiclass />
           </>
      )
 }
