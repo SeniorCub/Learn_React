@@ -8,11 +8,12 @@ export default {
           extend: {
                container: {
                     center: true,
-                    padding: '8vw',
+                    padding: '3rem',
                },
                colors: {
                     'pry': '#111827',
-                    'sec': '#F42C37',                                                                                                                                     
+                    'sec': '#F42C37',
+                    'ter': '#9CA3AF09',                                                                                                                
                }
           },
      },

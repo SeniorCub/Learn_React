@@ -2,6 +2,31 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+     font-family: Inconsolata, monospace;
+ }
 body{
      background-color: #111827;
+     width: 100vw;
+     overflow-x: hidden;
+}
+.searchnav:hover input{
+     width: 300px;
+     transition-property: all;
+    transition-timing-function: cubic-bezier(.4,0,.2,1);
+    transition-duration: .3s;
+}
+.searchnav:hover svg{
+     @apply text-sec
+}
+.btn {
+     @apply px-8 py-2 rounded-full font-normal w-max
+}
+.inconsolata{
+     font-family: "Inconsolata", system-ui;
+     font-optical-sizing: auto;
+     font-style: normal;
+}
+.hero::-webkit-scrollbar{
+     display: none;
 }

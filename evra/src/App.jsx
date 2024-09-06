@@ -1,12 +1,11 @@
-import Navbar from './components/Navbar'
+import HersoSection from "./components/HersoSection"
 
 function App() {
-
-  return (
-    <>
-      <Navbar />
-    </>
-  )
+     return (
+          <>
+               <HersoSection />
+          </>
+     )
 }
 
 export default App
