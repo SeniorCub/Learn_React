@@ -29,12 +29,12 @@ const Apiclass = () => {
                     <div className="grid grid-cols-4 gap-5 p-10">
                          {
                               user.map(({firstname, lastname, email, phone, website, address}, index)=>(
-                                   <div  className="p-5 shadow-lg bg-gray-100 rounded-lg hover:bg-slate-400" key={index}>
+                                   <div  className="p-5 shadow-lg bg-gray-100 rounded-lg reasonCard" key={index}>
                                         <p className="font-bold border-b-2 border-black">{firstname} {lastname}</p>
-                                        <p>email: {email}</p>
-                                        <p>{phone}</p>
-                                        <p>{website}</p>
-                                        <p>{address.suite},{address.street},{address.city}</p>
+                                        <p><span className="font-bold">email:</span>{email}</p>
+                                        <p><span className="font-bold">Phone:</span>{phone}</p>
+                                        <p><span className="font-bold">email:</span>{website}</p>
+                                        <p><span className="font-bold">email:</span>{address.suite},{address.street},{address.city}</p>
                                    </div>
                               ))
                          }

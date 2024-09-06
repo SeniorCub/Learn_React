@@ -2,11 +2,11 @@
 import './button.modules.css'
 
 // Desturcturing
-const Button = ({style, action, name})=>{
+const Button = ({style, action, name, link})=>{
 
      return (
           <button className={`btn ${style}`} onClick={action}>
-               {name}
+               <a href={link}>{name}</a>
           </button>
      )
 }

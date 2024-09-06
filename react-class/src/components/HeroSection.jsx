@@ -10,7 +10,7 @@ const HeroSection = () => {
                {/* <div className='bg-black absolute inset-0 '></div> */}
                <div className='flex justify-between container items-center absolute top-5'>
                     <img src={logo} alt="" className='w-40'/>
-                    <button className='btn text-white bg-red-700'>Sign In</button>
+                    <button className='btn text-white bg-red-700'><a href="/login">Sign In</a></button>
                </div>
                <div className='max-w-[650px] text-center text-white font-semibold space-y-3 px-4'>
                     <h1 className='text-3xl md:text-5xl font-extrabold'>Unlimited movies, TV shows, and more</h1>
