@@ -5,11 +5,12 @@ const Login = () => {
      const [email, setEmail] = useState('');
      const [password, setPassword] = useState('');
      const [users, setUser] = useState([]);
-
-     const handleSubmit = (e) => {
-          console.log(e.target.value);
-          setEmail(e.target.value)
+     const handleForm = () => {
+          setUser([...users, {email, password}]);
+          
+          localStorage.setItem("User", users)
      }
+
      return (
      <>
           <div className='h-screen flex justify-center items-center px-32 bg-slate-200'>
@@ -19,13 +20,14 @@ const Login = () => {
               </div>
                <form className='basis-1/3 p-10 bg-white rounded-lg shadow-md'>
                     <div className='mb-6'>
-                         <input type="email" className='w-full p-3 mt-1 border border-gray-300 rounded-md' placeholder='Email address' onChange={(e)=>handleSubmit(e)} />
+                         <input type="email" className='w-full p-3 mt-1 border border-gray-300 rounded-md' placeholder='Email address' onChange={(e)=>setEmail(e.target.value)} />
                          <div>{email}</div>
                     </div>
                     <div className='mb-6'>
-                         <input type="password" className='w-full p-3 mt-1 border border-gray-300 rounded-md' placeholder='Password'/>
+                         <input type="password" className='w-full p-3 mt-1 border border-gray-300 rounded-md' placeholder='Password' onChange={(e)=>setPassword(e.target.value)}/>
+                         <div>{password}</div>
                     </div>
-                    <button className='w-full py-3 mt-4 bg-blue-600 hover:bg-blue-700 text-white rounded-md'>Log in</button>
+                    <button className='w-full py-3 mt-4 bg-blue-600 hover:bg-blue-700 text-white rounded-md' onClick={()=>handleForm()}>Log in</button>
                </form>
           </div> 
      </>
