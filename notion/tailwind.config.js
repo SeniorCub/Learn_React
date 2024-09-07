@@ -11,9 +11,9 @@ export default {
                     padding: '3rem',
                },
                colors: {
-                    'pry': '#111827',
-                    'sec': '#F42C37',
-                    'ter': '#9CA3AF09',                                                     
+                    'primary': '#0582FF',
+                    'dark': '#121212',
+                    'gray': '#f6f5f4',                                                   
                }
           },
      },
