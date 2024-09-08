@@ -2,3 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+.btn {
+     @apply px-2 py-2 rounded-lg hover:bg-gray
+}
+img{
+     width: 100%;
+     height: 100%;
+     object-fit: contain;
+}

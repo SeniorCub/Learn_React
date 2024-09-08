@@ -1,11 +1,11 @@
-import Advert from "../components/Advert"
-import Navbar from "../components/Navbar"
+import DisplaySection from "../components/DisplaySection"
+import HeroSection from "../components/HeroSection"
 
 const Home = () => {
      return (
      <>
-          <Advert />
-          <Navbar />
+         <HeroSection />
+         <DisplaySection /> 
      </>
      )
 }

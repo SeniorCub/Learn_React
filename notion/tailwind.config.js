@@ -8,7 +8,7 @@ export default {
           extend: {
                container: {
                     center: true,
-                    padding: '3rem',
+                    padding: '4rem',
                },
                colors: {
                     'primary': '#0582FF',
