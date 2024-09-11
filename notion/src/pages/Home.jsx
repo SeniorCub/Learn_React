@@ -1,5 +1,5 @@
 import DisplaySection from "../components/DisplaySection"
-import EachSection from "../components/EachSection"
+import ExamplePage from "../components/ExamplePage"
 import HeroSection from "../components/HeroSection"
 
 const Home = () => {
@@ -7,7 +7,7 @@ const Home = () => {
      <>
          <HeroSection />
          <DisplaySection />
-         <EachSection />
+         <ExamplePage />
      </>
      )
 }
