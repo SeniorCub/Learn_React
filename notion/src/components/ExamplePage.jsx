@@ -113,7 +113,7 @@ const ExamplePage = () => {
                imageSrc={img3}
           />
           <div className="h-[50vh] flex justify-center items-center">
-               <div className="bg-gray p-[60px] w-max text-5xl font-light text-center flex justify-center items-center flex-col -rotate-3 font-serif relative">
+               <div className="bg-gray2 p-[60px] w-max text-5xl font-light text-center flex justify-center items-center flex-col -rotate-3 font-serif relative">
                     <div className="absolute -top-8 w-14"><img src="https://www.notion.so/front-static/pages/product/super-duper/pin.png" alt="" /></div>
                     <div>&quot;Your AI everything app.&quot;</div>
                     <h2 className="text-xl font-extrabold">Forbes</h2>
