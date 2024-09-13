@@ -1,16 +1,17 @@
 {
      "name": "create-seniorcub",
-     "version": "1.0.3",
-     "description": "CLI tool to genera~te a custom Node.js app",
+     "version": "2.0.0",
+     "description": "CLI tool to generate a custom Node.js app",
      "main": "index.js",
      "bin": {
-          "create-seniorcub": "./index.js"
+       "create-seniorcub": "./index.js"
      },
      "scripts": {
-          "start": "node index.js"
+       "start": "node index.js"
      },
      "dependencies": {
-          "commander": "^12.1.0",
-          "inquirer": "^10.2.2"
-     }
-}
+       "commander": "^12.1.0",
+       "inquirer": "^10.2.2"
+     },
+     "type": "module"
+   }
