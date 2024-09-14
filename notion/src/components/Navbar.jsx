@@ -14,7 +14,7 @@ const Navbar = () => {
                          <Dropdown buttonLabel="Product" menuItems={product} />
                          <Dropdown buttonLabel="Product" menuItems={product} />
                          <Dropdown buttonLabel="Product" menuItems={product} text={"Notion is always at home right in your browser"}/>
-                         <a href="#">Pricing</a>
+                         <a href="/">Pricing</a>
                     </div>
                </div>
                <div className="flex justify-center items-center gap-2">
