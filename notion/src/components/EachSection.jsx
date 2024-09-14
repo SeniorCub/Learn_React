@@ -1,5 +1,6 @@
 import Button from "./Button";
 import Header from "./Header";
+import SmallImgBox from "./SmallImgBox";
 
 // eslint-disable-next-line react/prop-types
 const EachSection = ({buttonName, buttonStyle, title, description, linkText, sections, imageSrc }) => {
@@ -13,13 +14,7 @@ const EachSection = ({buttonName, buttonStyle, title, description, linkText, sec
                     {
                     // eslint-disable-next-line react/prop-types
                     sections.map((section, index) => (
-                         <div key={index} className="flex flex-col justify-start items-start">
-                              <div className="h-20 mb-2">
-                                   <img src={section.image} alt="image" />
-                              </div>
-                              <h3 className="text-xl font-bold">{section.title}</h3>
-                              <p className="par">{section.description}</p>
-                         </div>
+                         <SmallImgBox  key={index}  image={section.image} title={section.title} description={section.description} />
                     ))}
                </div>
           </div>
