@@ -17,7 +17,7 @@ export default {
                     'color3': '#31446c',
                     'color4': "#F5A921",                                                   
                     'color5': "#F4863C",                                                   
-               }
+               },
           },
      },
      plugins: [
