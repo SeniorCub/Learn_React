@@ -1,57 +1,85 @@
-import { useState } from 'react';
+// eslint-disable-next-line no-unused-vars
+import React, { useState } from 'react';
 
-const CreateTask = () => {
+// eslint-disable-next-line react/prop-types, no-unused-vars
+const CreateTask = ({ allTasks, setAllTasks, setCompletedTasks }) => {
+     // State to manage the current task
      const [task, setTask] = useState({
           title: '',
           description: '',
           date: '',
           time: '',
           completed: false,
-        });
-      
-        const handleChange = (e) => {
+     });
+
+     // State to toggle form visibility
+     const [isOpen, setIsOpened] = useState(false);
+
+     // Handle input changes
+     const handleChange = (e) => {
           const { name, value, type, checked } = e.target;
           setTask({
-            ...task,
-            [name]: type === 'checkbox' ? checked : value,
+               ...task,
+               [name]: type === 'checkbox' ? checked : value,
           });
-        };
-      
-        const handleSubmit = (e) => {
+     };
+
+     // Handle form submission
+     const handleSubmit = (e) => {
           e.preventDefault();
-          console.log('Task created:', task);
-          // Here you can add the logic to save the task
+          const newTask = { ...task, id: Date.now() };
+
+          // Add the new task to the list of all tasks
+          const updatedTasks = [...allTasks, newTask];
+          setAllTasks(updatedTasks);
+          localStorage.setItem('tasks', JSON.stringify(updatedTasks));
+
+          // Reset the task form
           setTask({
-            title: '',
-            description: '',
-            date: '',
-            time: '',
-            completed: false,
+               title: '',
+               description: '',
+               date: '',
+               time: '',
+               completed: false,
           });
-        };      
-     return (
-     <>
-          <div className="absolute top-[10vh] p-4 bg-white shadow-md rounded-lg w-96 left-3" >
-          <h1 className="text-center text-2xl font-bold">Create Task</h1>
-          <form onSubmit={handleSubmit} >
-               <div className="flex w-full py-2 flex-col">
-                    <div className="">
-                    <input type="checkbox" name="completed" checked={task.completed} onChange={handleChange} className="checkbox checkbox-success"/>
-                         <input type="text" name="title" value={task.title} onChange={handleChange} placeholder="Task title" className="w-full font-extrabold text-base p-2 border bg-color3 rounded-lg" required />
-                         <textarea name="description" value={task.description} onChange={handleChange} placeholder="Task description" className="w-full font-light text-sm p-2 mt-2 border bg-color3 rounded-lg" required />
-                    </div>
 
-                    <div className="flex h-10 justify-center items-center text-sm">
-                         <input type="time" name="time" value={task.time} onChange={handleChange} className="w-full font-bold p-2 border bg-color3 rounded-lg h-10" required />
-                         <input type="date" name="date" value={task.date} onChange={handleChange} className="w-full font-extralight text-xs p-2 border bg-color3 rounded-lg h-10" required />
+          // Close the form after submission
+          setIsOpened(false);
+     };
+
+  return (
+    <>
+          <button  className="bg-color3 w-16 h-16 flex flex-col justify-center items-center rounded-full -translate-y-5 fixed right-1/2 bottom-4 transform translate-x-1/2"  onClick={() => setIsOpened(!isOpen)}>
+               <svg  xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 24 24"  fill="currentColor"  strokeWidth={3}  stroke="currentColor"  className="w-8 h-8">
+               <path  fillRule="evenodd"  d="M12 3.75a.75.75 0 0 1 .75.75v6.75h6.75a.75.75 0 0 1 0 1.5h-6.75v6.75a.75.75 0 0 1-1.5 0v-6.75H4.5a.75.75 0 0 1 0-1.5h6.75V4.5a.75.75 0 0 1 .75-.75Z"  clipRule="evenodd"/>
+               </svg>
+          </button>
+
+          {isOpen && (
+               <div className="fixed top-10 p-4 bg-white shadow-md rounded-lg w-96 left-3 right-3 md:left-1/2 md:transform md:-translate-x-1/2">
+                    <h1 className="text-center text-2xl font-bold mb-4">Create Task</h1>
+                    <form onSubmit={handleSubmit}>
+                    <div className="flex flex-col space-y-4">
+                         <div className="flex items-center">
+                              <input type="checkbox" name="completed" checked={task.completed} onChange={handleChange} className="checkbox checkbox-success mr-2" />
+                              <label className="font-semibold">Mark as Completed</label>
+                         </div>
+
+                         <input type="text" name="title" value={task.title} onChange={handleChange} placeholder="Task title" className="w-full font-extrabold text-base p-2 border bg-color3 rounded-lg"     required />
+                         <textarea name="description" value={task.description} onChange={handleChange} placeholder="Task description" className="w-full font-light text-sm p-2 border bg-color3 rounded-lg" required/>
+
+                         <div className="flex space-x-2">
+                              <input type="time" name="time" value={task.time} onChange={handleChange} className="w-1/2 font-bold p-2 border bg-color3 rounded-lg" required />
+                              <input type="date" name="date" value={task.date} onChange={handleChange} className="w-1/2 font-extralight text-xs p-2 border bg-color3 rounded-lg" required />
+                         </div>
+
+                         <button type="submit" className="w-full py-2 px-4 bg-blue-500 text-white font-bold rounded-lg hover:bg-blue-600"> Add Task </button>
                     </div>
+                    </form>
                </div>
-      
-               <button type="submit" className="mt-4 w-full py-2 px-4 bg-blue-500 text-white font-bold rounded-lg hover:bg-blue-600">Add Task</button>
-          </form>
-          </div>
-     </>
-     )
-}
+          )}
+    </>
+  );
+};
 
-export default CreateTask
+export default CreateTask;
