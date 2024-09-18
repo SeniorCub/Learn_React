@@ -6,74 +6,74 @@ import SmallNavbar from '../components/SmallNavbar';
 import SmallTopNavbar from '../components/SmallTopNavbar';
 
 const ListView = () => {
-  const [allTasks, setAllTasks] = useState(
-    JSON.parse(localStorage.getItem('tasks')) || []
-  );
-  const [completedTasks, setCompletedTasks] = useState(
-    JSON.parse(localStorage.getItem('completedTasks')) || []
-  );
-  const [pendingTasks, setPendingTasks] = useState(
-    JSON.parse(localStorage.getItem('pendingTasks')) || []
-  );
+     const [allTasks, setAllTasks] = useState(
+          JSON.parse(localStorage.getItem('tasks')) || []
+     );
+     const [completedTasks, setCompletedTasks] = useState(
+          JSON.parse(localStorage.getItem('completedTasks')) || []
+     );
+     const [pendingTasks, setPendingTasks] = useState(
+          JSON.parse(localStorage.getItem('pendingTasks')) || []
+     );
 
      // Function to check and move expired tasks to the pending section
      const checkForPendingTasks = () => {
-     const currentDate = new Date();
-     const newPendingTasks = allTasks.filter((task) => {
-          const taskDateTime = new Date(`${task.date}T${task.time}`);
-          return !task.completed && taskDateTime < currentDate;
-     });
+          const currentDate = new Date();
+          const newPendingTasks = allTasks.filter((task) => {
+               const taskDateTime = new Date(`${task.date}T${task.time}`);
+               return !task.completed && taskDateTime < currentDate;
+          });
 
-     if (newPendingTasks.length > 0) {
-          setPendingTasks([...pendingTasks, ...newPendingTasks]);
+          if (newPendingTasks.length > 0) {
+               setPendingTasks([...pendingTasks, ...newPendingTasks]);
 
-          const updatedTasks = allTasks.filter(
-          (task) => !newPendingTasks.some((pendingTask) => pendingTask.id === task.id)
-          );
-          setAllTasks(updatedTasks);
+               const updatedTasks = allTasks.filter(
+               (task) => !newPendingTasks.some((pendingTask) => pendingTask.id === task.id)
+               );
+               setAllTasks(updatedTasks);
 
-          localStorage.setItem('tasks', JSON.stringify(updatedTasks));
-          localStorage.setItem('pendingTasks', JSON.stringify([...pendingTasks, ...newPendingTasks]));
-     }
+               localStorage.setItem('tasks', JSON.stringify(updatedTasks));
+               localStorage.setItem('pendingTasks', JSON.stringify([...pendingTasks, ...newPendingTasks]));
+          }
      };
 
-  useEffect(() => {
+     useEffect(() => {
      checkForPendingTasks();
      // eslint-disable-next-line react-hooks/exhaustive-deps
      }, [allTasks]);
 
      const toggleCompletion = (id) => {
-     const updatedTasks = allTasks.map((task) => {
-          if (task.id === id) {
-          const updatedTask = { ...task, completed: !task.completed };
-          if (updatedTask.completed) {
-          setCompletedTasks([...completedTasks, updatedTask]);
-          localStorage.setItem('completedTasks', JSON.stringify([...completedTasks, updatedTask]));
-          }
-          return updatedTask;
-          }
-          return task;
-     });
+          const updatedTasks = allTasks.map((task) => {
+               if (task.id === id) {
+               const updatedTask = { ...task, completed: !task.completed };
+               if (updatedTask.completed) {
+               setCompletedTasks([...completedTasks, updatedTask]);
+               localStorage.setItem('completedTasks', JSON.stringify([...completedTasks, updatedTask]));
+               }
+               return updatedTask;
+               }
+               return task;
+          });
 
-     const activeTasks = updatedTasks.filter((task) => !task.completed);
-     setAllTasks(activeTasks);
-     localStorage.setItem('tasks', JSON.stringify(activeTasks));
+          const activeTasks = updatedTasks.filter((task) => !task.completed);
+          setAllTasks(activeTasks);
+          localStorage.setItem('tasks', JSON.stringify(activeTasks));
      };
 
      const toggleCompletionInPending = (id) => {
-     const updatedPendingTasks = pendingTasks.map((task) => {
-          if (task.id === id) {
-          const updatedTask = { ...task, completed: !task.completed };
-          setCompletedTasks([...completedTasks, updatedTask]);
-          return updatedTask;
-          }
-          return task;
-     });
+          const updatedPendingTasks = pendingTasks.map((task) => {
+               if (task.id === id) {
+               const updatedTask = { ...task, completed: !task.completed };
+               setCompletedTasks([...completedTasks, updatedTask]);
+               return updatedTask;
+               }
+               return task;
+          });
 
-     const remainingPendingTasks = updatedPendingTasks.filter((task) => !task.completed);
-     setPendingTasks(remainingPendingTasks);
-     localStorage.setItem('pendingTasks', JSON.stringify(remainingPendingTasks));
-     localStorage.setItem('completedTasks', JSON.stringify([...completedTasks, ...updatedPendingTasks.filter(task => task.completed)]));
+          const remainingPendingTasks = updatedPendingTasks.filter((task) => !task.completed);
+          setPendingTasks(remainingPendingTasks);
+          localStorage.setItem('pendingTasks', JSON.stringify(remainingPendingTasks));
+          localStorage.setItem('completedTasks', JSON.stringify([...completedTasks, ...updatedPendingTasks.filter(task => task.completed)]));
      };
 
      // Function to delete a task
