@@ -4,7 +4,7 @@ import React from 'react';
 // eslint-disable-next-line react/prop-types
 const ListsAll = ({ tasks, toggleCompletion, deleteTask, taskType, isPendingList = false, isCompletedList = false }) => {
      return (
-     <div className="mt-4">
+     <div className="mt-[10vh]">
           {
           // eslint-disable-next-line react/prop-types
           tasks.length === 0 ? (
