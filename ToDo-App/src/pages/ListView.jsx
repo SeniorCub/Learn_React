@@ -101,9 +101,9 @@ const ListView = () => {
           <div className="relative">
                <SmallTopNavbar />
                <SmallNavbar />
-               <div className="p-4">
+               <div className="p-5 pt-16 container">
                     {/* Active Tasks Section */}
-                    <h2 className="text-xl font-bold">Active Tasks</h2>
+                    <h2 className="text-xl font-bold pt-5">Active Tasks</h2>
                     <ListsAll tasks={allTasks} toggleCompletion={toggleCompletion} deleteTask={deleteTask} taskType="active" />
                     <hr className='my-10 mx-10 bg-color1 h-1' />
                     {/* Pending Tasks Section */}
