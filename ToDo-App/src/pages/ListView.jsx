@@ -102,7 +102,7 @@ const ListView = () => {
           <div className="relative">
                <SmallTopNavbar />
                <SmallNavbar />
-               <SearchModal />
+               <SearchModal allTasks={allTasks} />
                <div className="p-5 pt-16 container">
                     {/* Active Tasks Section */}
                     <h2 className="text-xl font-bold pt-5">Active Tasks</h2>
