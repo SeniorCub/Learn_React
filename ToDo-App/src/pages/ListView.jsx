@@ -4,6 +4,7 @@ import CreateTask from '../components/CreateTask';
 import ListsAll from '../components/ListsAll';
 import SmallNavbar from '../components/SmallNavbar';
 import SmallTopNavbar from '../components/SmallTopNavbar';
+import SearchModal from '../components/SearchModal';
 
 const ListView = () => {
      const [allTasks, setAllTasks] = useState(
@@ -101,6 +102,7 @@ const ListView = () => {
           <div className="relative">
                <SmallTopNavbar />
                <SmallNavbar />
+               <SearchModal />
                <div className="p-5 pt-16 container">
                     {/* Active Tasks Section */}
                     <h2 className="text-xl font-bold pt-5">Active Tasks</h2>
