@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 
 // eslint-disable-next-line react/prop-types
-const SearchModal = ({ allTasks, isPendingList = false, isCompletedList = false }) => {
+const SearchModal = ({ allTasks}) => {
     // State to toggle form visibility
     const [isOpen, setIsOpened] = useState(false);
     const [searchItem, setSearch] = useState("");
@@ -41,26 +41,23 @@ const SearchModal = ({ allTasks, isPendingList = false, isCompletedList = false 
 
             {/* Search Results Modal */}
             {isOpen && (
-                <div className="fixed top-[10vh] mt-2 p-5 bg-color3 shadow-md w-96 transform translate-x-1/2 right-1/2 md:w-[50vw] w-[30vw]">
+                <div className="fixed top-[10vh] mt-2 p-2 bg-color3 shadow-md w-96 transform translate-x-1/2 right-1/2 md:w-[50vw] w-[30vw]">
                     <div>
                         {/* Check if filteredItems has any results */}
                         {filteredItems.length > 0 ? (
-                            filteredItems.map(({ id, completed, date, description, title, time }) => (
-                                <div
-                                    key={id}
-                                    className={`flex w-full py-2 mb-2 rounded-lg max-h-28 ${completed ? 'opacity-50' : isPendingList ? 'bg-red-100' : ''}`}
-                                >
-                                    {/* Task Details */}
-                                    <div className="basis-4/6">
-                                        <h2 className="font-extrabold text-base">{title}</h2>
-                                        <p className="font-light text-sm">{description}</p>
-                                    </div>
-                                    {/* Time and Date */}
-                                    <div className="basis-2/6 text-sm text-right">
-                                        <p className="font-bold max-h-10 overflow-y-hidden">{time}</p>
-                                        <p className="font-extralight text-xs max-h-16 overflow-y-hidden">{date}</p>
-                                    </div>
-                                </div>
+                            filteredItems.map(({ id, date, description, title, time }) => (
+                                   <div key={id} className={`flex w-full p-2 mb-2 max-h-28 border-b`} >
+                                        {/* Task Details */}
+                                        <div className="basis-4/6">
+                                             <h2 className="font-extrabold text-base">{title}</h2>
+                                             <p className="font-light text-sm">{description}</p>
+                                        </div>
+                                        {/* Time and Date */}
+                                        <div className="basis-2/6 text-sm text-right">
+                                             <p className="font-bold max-h-10 overflow-y-hidden">{time}</p>
+                                             <p className="font-extralight text-xs max-h-16 overflow-y-hidden">{date}</p>
+                                        </div>
+                                   </div>
                             ))
                         ) : (
                             <p>No tasks found.</p>
