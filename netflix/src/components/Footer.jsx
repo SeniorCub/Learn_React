@@ -23,7 +23,7 @@ const Footer = () => {
                <div className="bg-black text-white py-10">
                     <div className="container space-y-10 ">
                          <Link name={'Questions? Contact us.'} link={'https://seniorcub.netlify.app'} />
-                         <div className="grid grid-cols-3 space-y-3 text-gray-400 font-normal text-sm">
+                         <div className="grid md:grid-cols-3 space-y-3 text-gray-400 font-normal text-sm">
                               {
                                    links.map((link, index)=>(
                                         <Link key={index} name={link.title} link={link.url} style={'w-[33vw]'}/>
