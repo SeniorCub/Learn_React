@@ -37,13 +37,13 @@ const DisplaySection = () => {
 
      return (
      <div className="container space-y-5 my-5">
-          <div className="flex justify-center items-center gap-3">
+          <div className="flex justify-center items-center gap-3 flex-wrap">
                {images.map((_, index) => (
                     <Button key={index} icons={icons[index]} style={`h-10 w-max font-bold flex border flex-row-reverse gap-2 ${index === activeIndex ? "bg-gray border-gray" : "border-slate-300"}`} name={names[index]} />
                ))}
           </div>
-          <div className="h-[90vh] w-full">
-               <img src={img} alt="Carousel" className="object-contain w-full h-full" />
+          <div className="h-[50vh] md:h-[90vh] w-full">
+               <img src={img} alt="Carousel" className="object-cover md:object-contain w-full h-full" />
           </div>
      </div>
      );

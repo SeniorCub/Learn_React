@@ -3,8 +3,8 @@
 const Header = ({title, description, linkText, style}) => {
      return (
      <>
-          <div className={`basis-2/5 text-xl space-y-3 ${style}`}>
-               <h1 className="text-6xl font-bold">{title}</h1>
+          <div className={`md:basis-2/5 text-xl space-y-3 ${style}`}>
+               <h1 className="md:text-6xl text-3xl font-bold">{title}</h1>
                <p className="par">{description}</p>
 
                <a href="#" className="flex justify-start items-center text-primary gap-1">

@@ -9,7 +9,7 @@ const GetStarted = () => {
      <>
           <div className="container my-16">
                <Header title={"Get started."} style={"w-3/5 mb-5"} />
-               <div className="flex gap-5">
+               <div className="flex gap-5 flex-wrap">
                    <GetCard name={"Notion"} image={img1} />
                    <GetCard name={"Notion Calender"} image={img2} />
                </div>

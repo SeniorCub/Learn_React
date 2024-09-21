@@ -16,3 +16,6 @@ img{
 .par{
      @apply text-black/60
 }
+.container{
+     @apply md:p-[4rem] p-[2rem]
+}

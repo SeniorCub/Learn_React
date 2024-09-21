@@ -8,9 +8,9 @@ const NextSection1 = () => {
      <>
           <div className="container my-16">
                <Header title={"Start with a template. Build anything."} linkText={"Browse all templates"} style={"w-2/3 mb-5"} />
-               <div className="grid grid-cols-2 gap-5 ">
+               <div className="grid md:grid-cols-2 gap-5 ">
                     <SmallBox name={"Comapny Wiki"} icon={<FaBookOpen className="text-red-500 text-5xl" />} img={wiki} />
-                    <div className="grid grid-cols-2 gap-5">
+                    <div className="grid md:grid-cols-2 gap-5">
                          <SmallBox name={"Project Roadmap"} icon={<FaBicycle className="text-blue-500 text-5xl" />} />
                          <SmallBox name={"OKRs"} icon={<FaGgCircle className="text-orange-500 text-5xl" />} />
                          <SmallBox name={"Meeting Notes"} icon={<FaNewspaper className="text-yellow-500 text-5xl" />} />

@@ -39,7 +39,7 @@ const Footer = () => {
      }
      return (
      <>
-          <div className="grid grid-cols-5 container py-24">
+          <div className="grid lg:grid-cols-5 grid-cols-2 gap-5 container py-24">
                <div className="flex flex-col space-y-2 justify-start items-start">
                     <Logo />
                     <div className="flex gap-5 text-xl w-full text-[#333]/80">

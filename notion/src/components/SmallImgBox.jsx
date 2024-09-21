@@ -3,12 +3,14 @@
 const SmallImgBox = ({key, image, title, description, style1, style2}) => {
      return (
      <>
-          <div key={key} className="flex flex-col justify-start items-start">
-               <div className="h-20 mb-2">
+          <div key={key} className="flex md:flex-col justify-start md:items-start items-center p-1">
+               <div className="h-16 md:h-20 mb-2">
                     <img src={image} alt="image" />
                </div>
-               <h3 className={`text-xl font-bold ${style1}`}>{title}</h3>
-               <p className={`par ${style2}`}>{description}</p>
+               <div>
+                    <h3 className={`md:text-xl text-sm font-bold ${style1}`}>{title}</h3>
+                    <p className={`par ${style2} text-xs`}>{description}</p>
+               </div>
           </div>
      </>
      )

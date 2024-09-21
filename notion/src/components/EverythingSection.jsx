@@ -53,8 +53,8 @@ const EverythingSection = () => {
      return (
      <>
       <div className="container my-16">
-          <Header title={"Everything you need to do your best work."} style={"w-3/5 mb-5"} />
-          <div className="grid grid-cols-4 gap-5">
+          <Header title={"Everything you need to do your best work."} style={"md:w-3/5 mb-5"} />
+          <div className="grid md:grid-cols-4 grid-cols-2 gap-5">
               {
                      sections.map((section, index) => (
                          <SmallImgBox  key={index}  image={section.image} title={section.title} description={section.description} style1={'font-3xl font-bold'} style2={'font-2xl font-medium'} />

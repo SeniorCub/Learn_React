@@ -10,11 +10,11 @@ import discord from "../assets/images/discord.svg"
 const HeroSection = () => {
      return (
      <>
-          <div className="h-[100vh] md:h-max">
+          <div className="md:h-[100vh]">
                <Advert />
                <Navbar />
-               <div className="mt-auto flex h-[70vh] container items-end justify-center">
-                    <div className="basis-1/2 flex flex-col gap-10">
+               <div className="mt-auto flex md:h-[70vh] container items-end justify-center flex-wrap">
+                    <div className="md:basis-1/2 flex flex-col gap-10">
                          <div className="basis-2/3 space-y-5">
                               <h1 className="text-3xl md:text-7xl font-bold text-dark">Work feels better here.</h1>
                               <h3 className="text-2xl font-medium w-4/5">Write, plan, and organize in Notion, the AI-powered workspace for every team.</h3>
@@ -33,7 +33,7 @@ const HeroSection = () => {
                               </div>
                          </div>
                     </div>
-                    <div className="basis-1/2"><img src={hero} alt="" /></div>
+                    <div className="md:basis-1/2 md:h-full h-[30vh]"><img src={hero} alt="" className="object-fill" /></div>
                </div>
           </div>
      </>
