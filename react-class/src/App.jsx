@@ -4,6 +4,7 @@ import { Routes, Route } from 'react-router-dom'
 import Login from './pages/Login'
 import Error from './pages/Error'
 import SignUp from './pages/SignUp'
+import Newsletter from './pages/Newsletter'
 
 function App() {
      return (
@@ -12,7 +13,9 @@ function App() {
                <Route path="/" element={<Home />} />
                <Route path="/login" element={<Login />} />
                <Route path='/sign' element={<SignUp />} />
-               <Route path='*' element={<Error />}/>
+               <Route path='/newsletter' element={<Newsletter />} />
+               {/* Error 404 Page */}
+               <Route path='*' element={<Error />} />
           </Routes>
           </>
      )
