@@ -14,3 +14,6 @@
 .reasonCard:hover{
      background: linear-gradient(149deg, #192247 0%, #210e17 96.86%),
 }
+.email{
+     @apply bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg  block w-full ps-12 p-2.5
+}
