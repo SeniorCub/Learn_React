@@ -8,9 +8,6 @@ import Apiclass from '../components/Apiclass'
 
 function Home() {
      const [students, setStudents] = useState(['bami', 'favour', 'dhorn'])
-     const handleState = (message) =>{
-          alert(`You clicked on ${message} button`)
-     }
      const list = [
           {names: 'click me',styles: 'bg-green-600 text-white'},
           {names: 'Log In', styles: 'bg-blue-600 text-white'},
